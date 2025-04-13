@@ -1,15 +1,23 @@
-// Crear índices
-CREATE INDEX usuario_id IF NOT EXISTS FOR (u:Usuario) ON (u.id);
-CREATE INDEX post_id IF NOT EXISTS FOR (p:Post) ON (p.id);
+// First, delete all existing data
+MATCH (n) DETACH DELETE n;
 
-// Crear constraints
-CREATE CONSTRAINT usuario_id_unique IF NOT EXISTS ON (u:Usuario) ASSERT u.id IS UNIQUE;
-CREATE CONSTRAINT usuario_email_unique IF NOT EXISTS ON (u:Usuario) ASSERT u.email IS UNIQUE;
-CREATE CONSTRAINT post_id_unique IF NOT EXISTS ON (p:Post) ASSERT p.id IS UNIQUE;
+// Drop existing indexes and constraints
+DROP INDEX usuario_id IF EXISTS;
+DROP INDEX post_id IF EXISTS;
+DROP INDEX usuario_pais IF EXISTS;
+DROP INDEX post_fecha IF EXISTS;
+DROP CONSTRAINT usuario_id_unique IF EXISTS;
+DROP CONSTRAINT usuario_email_unique IF EXISTS;
+DROP CONSTRAINT post_id_unique IF EXISTS;
+
+// Create constraints (these will automatically create unique indexes)
+CREATE CONSTRAINT usuario_id_unique IF NOT EXISTS FOR (u:Usuario) REQUIRE u.id IS UNIQUE;
+CREATE CONSTRAINT usuario_email_unique IF NOT EXISTS FOR (u:Usuario) REQUIRE u.email IS UNIQUE;
+CREATE CONSTRAINT post_id_unique IF NOT EXISTS FOR (p:Post) REQUIRE p.id IS UNIQUE;
 
 // Cargar usuarios
 LOAD CSV WITH HEADERS FROM 'file:///usuarios.csv' AS row
-MERGE (u:Usuario {
+CREATE (u:Usuario {
     id: row.id,
     nombre: row.nombre,
     email: row.email,
@@ -29,7 +37,7 @@ SET r.fecha_inicio = date(row.fecha_inicio),
 // Cargar posts
 LOAD CSV WITH HEADERS FROM 'file:///posts.csv' AS row
 MATCH (u:Usuario {id: row.usuario_id})
-MERGE (p:Post {
+CREATE (p:Post {
     id: row.id,
     contenido: row.contenido,
     fecha: datetime(row.fecha),
@@ -39,6 +47,6 @@ MERGE (p:Post {
 })
 MERGE (u)-[:PUBLICÓ]->(p);
 
-// Crear índices adicionales para mejorar el rendimiento
+// Create additional indexes for performance
 CREATE INDEX usuario_pais IF NOT EXISTS FOR (u:Usuario) ON (u.pais);
 CREATE INDEX post_fecha IF NOT EXISTS FOR (p:Post) ON (p.fecha);
