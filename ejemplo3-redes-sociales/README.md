@@ -58,13 +58,6 @@ ORDER BY engagement DESC
 LIMIT 10;
 ```
 
-### Recomendaciones
-
-```cypher
-// Sugerir usuarios similares por intereses
-
-```
-
 ## Importación de Datos
 
 1. Verificar configuración:
