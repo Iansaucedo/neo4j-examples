@@ -1,0 +1,11 @@
+id,nombre,email,fecha_registro,pais,intereses
+U001,Juan Martinez,juan.m@email.com,2024-01-01,México,gaming;hardware;streaming
+U002,Ana López,ana.l@email.com,2024-01-01,España,hardware;programación;tech
+U003,Carlos Ruiz,carlos.r@email.com,2024-01-02,Argentina,gaming;overclock;modding
+U004,María García,maria.g@email.com,2024-01-02,Chile,streaming;gaming;hardware
+U005,Pedro Sánchez,pedro.s@email.com,2024-01-03,Colombia,hardware;benchmarks;tech
+U006,Laura Torres,laura.t@email.com,2024-01-03,México,modding;watercooling;gaming
+U007,Diego Flores,diego.f@email.com,2024-01-04,Perú,streaming;hardware;gaming
+U008,Sofia Ramírez,sofia.r@email.com,2024-01-04,Argentina,tech;reviews;gaming
+U009,Miguel Castro,miguel.c@email.com,2024-01-05,España,hardware;gaming;overclock
+U010,Carmen Morales,carmen.m@email.com,2024-01-05,Chile,gaming;streaming;tech

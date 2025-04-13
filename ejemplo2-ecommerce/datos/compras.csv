@@ -1,0 +1,21 @@
+usuario_id,producto_id,fecha,cantidad,monto,metodo_pago
+U001,P001,2024-01-15,1,1299.99,Tarjeta de Crédito
+U002,P002,2024-01-15,2,179.98,PayPal
+U003,P006,2024-01-16,1,799.99,Tarjeta de Crédito
+U004,P012,2024-01-16,1,129.99,Transferencia
+U001,P005,2024-01-17,2,299.98,PayPal
+U005,P008,2024-01-17,4,799.96,Tarjeta de Crédito
+U006,P003,2024-01-18,1,129.99,PayPal
+U007,P004,2024-01-18,2,799.98,Tarjeta de Débito
+U008,P009,2024-01-19,1,129.99,Transferencia
+U009,P007,2024-01-19,1,549.99,PayPal
+U010,P010,2024-01-20,2,319.98,Tarjeta de Crédito
+U002,P011,2024-01-20,1,89.99,PayPal
+U003,P013,2024-01-21,2,159.98,Transferencia
+U004,P014,2024-01-21,1,199.99,Tarjeta de Débito
+U005,P015,2024-01-22,5,149.95,PayPal
+U001,P008,2024-01-22,2,399.98,Tarjeta de Crédito
+U006,P004,2024-01-23,1,399.99,Transferencia
+U007,P006,2024-01-23,1,799.99,PayPal
+U008,P002,2024-01-24,3,269.97,Tarjeta de Crédito
+U009,P012,2024-01-24,2,259.98,Transferencia

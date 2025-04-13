@@ -1,0 +1,16 @@
+id,usuario_id,contenido,fecha,likes,comentarios,compartidos
+P001,U001,Mi nueva laptop gaming es increíble!,2024-01-15,45,12,8
+P002,U003,¿Alguien recomienda una tarjeta gráfica?,2024-01-15,23,15,3
+P003,U002,Tutorial: Cómo armar tu PC,2024-01-16,156,34,25
+P004,U005,Review del nuevo procesador Intel,2024-01-16,89,28,15
+P005,U004,Setup gaming completo,2024-01-17,234,56,42
+P006,U001,Problemas con el overclock,2024-01-17,67,45,5
+P007,U006,Mi experiencia con watercooling,2024-01-18,178,67,29
+P008,U002,Comparativa de SSDs,2024-01-18,145,38,21
+P009,U007,Streaming setup tour,2024-01-19,198,45,31
+P010,U003,¿RGB o no RGB?,2024-01-19,167,89,12
+P011,U008,Los mejores monitores 2024,2024-01-20,245,78,45
+P012,U009,Cable management tips,2024-01-20,134,45,23
+P013,U010,Mi primera build gaming,2024-01-21,289,92,56
+P014,U004,Review teclado mecánico,2024-01-21,156,43,19
+P015,U005,Guía de refrigeración,2024-01-22,178,56,34

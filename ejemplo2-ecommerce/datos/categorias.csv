@@ -1,0 +1,16 @@
+id,nombre,descripcion,padre_id
+C001,Computadoras,Equipos de cómputo completos,NULL
+C002,Periféricos,Dispositivos externos para PC,NULL
+C003,Monitores,Pantallas y displays,NULL
+C004,Almacenamiento,Dispositivos de almacenamiento,NULL
+C005,Componentes,Partes internas de PC,NULL
+C006,Audio,Equipos de sonido y audio,NULL
+C007,Redes,Equipos de conectividad,NULL
+C008,Cables,Cables y adaptadores,NULL
+C009,Gaming,Productos para videojuegos,C001
+C010,Workstation,Equipos de trabajo,C001
+C011,Teclados,Teclados de todo tipo,C002
+C012,Mouse,Mouse y trackpads,C002
+C013,SSD,Discos de estado sólido,C004
+C014,HDD,Discos duros tradicionales,C004
+C015,GPU,Tarjetas gráficas,C005
