@@ -71,10 +71,8 @@ Este script:
 Para usarlo:
 
 ```bash
-chmod +x setup_neo4j.sh
+chmod +x setup.sh
 ./setup_neo4j.sh
 ```
 
 Después de ejecutarlo, podrás usar las credenciales en tus scripts de importación reemplazando los valores en los archivos `import.sh`.
-
-

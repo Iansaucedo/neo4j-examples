@@ -41,15 +41,6 @@ RETURN e.nombre,
 ORDER BY promedio DESC;
 ```
 
-### Materias y Prerequisitos
-
-```cypher
-// Ruta de prerequisitos
-MATCH path = (m:Materia)-[:REQUIERE*]->(p:Materia)
-WHERE m.codigo = 'FIS301'
-RETURN path;
-```
-
 ### Análisis por Carrera
 
 ```cypher
