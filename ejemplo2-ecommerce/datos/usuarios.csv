@@ -1,0 +1,11 @@
+id,nombre,email,fecha_registro,pais,metodo_pago_preferido
+U001,Juan Pérez,juan.p@email.com,2024-01-01,México,Tarjeta de Crédito
+U002,María García,maria.g@email.com,2024-01-01,España,PayPal
+U003,Carlos Ruiz,carlos.r@email.com,2024-01-02,Argentina,Tarjeta de Crédito
+U004,Ana Martínez,ana.m@email.com,2024-01-02,Chile,Transferencia
+U005,Pedro Sánchez,pedro.s@email.com,2024-01-03,Colombia,Tarjeta de Crédito
+U006,Laura Torres,laura.t@email.com,2024-01-03,México,PayPal
+U007,Diego Flores,diego.f@email.com,2024-01-04,Perú,Tarjeta de Débito
+U008,Sofia Ramírez,sofia.r@email.com,2024-01-04,Argentina,Tarjeta de Crédito
+U009,Miguel Castro,miguel.c@email.com,2024-01-05,España,Transferencia
+U010,Carmen Morales,carmen.m@email.com,2024-01-05,Chile,Tarjeta de Crédito
