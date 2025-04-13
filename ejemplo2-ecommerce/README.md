@@ -23,8 +23,13 @@ Este ejemplo implementa un sistema de comercio electrónico utilizando Neo4j, pe
   - descripcion
   - padre_id
 
-- **Usuario**:
+- **UsuariosEcommerce**:
   - id
+  - nombre
+  - email
+  - fecha_registro
+  - pais
+  - metodo_pago_preferido
 
 ### Relaciones
 
@@ -42,12 +47,20 @@ Este ejemplo implementa un sistema de comercio electrónico utilizando Neo4j, pe
 
 ```cypher
 // Top productos por ventas
-MATCH (u:Usuario)-[c:COMPRÓ]->(p:Producto)
+MATCH (u:UsuariosEcommerce)-[c:COMPRÓ]->(p:Producto)
 RETURN p.nombre,
        COUNT(c) as ventas,
        SUM(c.monto) as ingreso_total
 ORDER BY ventas DESC
 LIMIT 5;
+
+// Ventas por país
+MATCH (u:UsuariosEcommerce)-[c:COMPRÓ]->(p:Producto)
+RETURN u.pais,
+       COUNT(DISTINCT u) as compradores,
+       COUNT(c) as ventas,
+       SUM(c.monto) as ingreso_total
+ORDER BY ingreso_total DESC;
 ```
 
 ### Categorías y Productos
@@ -60,20 +73,15 @@ RETURN c.nombre as categoria,
        COUNT(p) as productos_bajos,
        COLLECT(p.nombre) as listado
 ORDER BY productos_bajos DESC;
-```
 
-### Patrones de Compra
-
-```cypher
-// Productos frecuentemente comprados juntos
-MATCH (u:Usuario)-[c1:COMPRÓ]->(p1:Producto)
-MATCH (u)-[c2:COMPRÓ]->(p2:Producto)
-WHERE p1.id < p2.id
-  AND date(c1.fecha) = date(c2.fecha)
-RETURN p1.nombre, p2.nombre,
-       COUNT(*) as frecuencia
-ORDER BY frecuencia DESC
-LIMIT 10;
+// Ventas por categoría principal
+MATCH (p:Producto)-[:PERTENECE_A]->(c:Categoria)
+WHERE c.padre_id IS NULL
+MATCH (u:UsuariosEcommerce)-[compra:COMPRÓ]->(p)
+RETURN c.nombre as categoria,
+       COUNT(compra) as total_ventas,
+       SUM(compra.monto) as monto_total
+ORDER BY monto_total DESC;
 ```
 
 ## Importación de Datos
@@ -98,6 +106,7 @@ ejemplo2-ecommerce/
 ├── datos/
 │   ├── productos.csv
 │   ├── categorias.csv
+│   ├── usuarios.csv
 │   └── compras.csv
 └── scripts/
     ├── import.sh
