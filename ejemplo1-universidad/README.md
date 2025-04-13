@@ -27,7 +27,6 @@ Este ejemplo implementa un sistema de gestión universitaria usando Neo4j, permi
 - `[:CURSÓ]`: Conecta estudiantes con materias
   - calificacion
   - periodo
-- `[:REQUIERE]`: Indica prerequisitos entre materias
 
 ## Consultas Útiles
 
