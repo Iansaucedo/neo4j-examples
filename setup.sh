@@ -7,7 +7,7 @@ NC='\033[0m'
 
 # Configuración
 NEO4J_USER="neo4j"
-NEO4J_PASSWORD="neo4j"  # Contraseña por defecto inicial
+NEO4J_PASSWORD="12345678"  # Contraseña por defecto inicial
 NEO4J_NEW_PASSWORD="tu_password"  # Misma contraseña usada en los scripts de importación
 
 echo "Configurando Neo4j..."
@@ -41,7 +41,8 @@ sleep 15
 # Cambiar contraseña
 echo "Cambiando contraseña de Neo4j..."
 cypher-shell -u $NEO4J_USER -p $NEO4J_PASSWORD \
-  "CALL system.change_password('$NEO4J_NEW_PASSWORD')"
+  "ALTER CURRENT USER SET PASSWORD FROM '$NEO4J_PASSWORD' TO '$NEO4J_NEW_PASSWORD'"
+
 
 if [ $? -eq 0 ]; then
     echo -e "${GREEN}Contraseña actualizada exitosamente${NC}"
