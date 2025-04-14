@@ -7,7 +7,8 @@ NC='\033[0m'
 
 # Configuración
 NEO4J_USER="neo4j"
-NEO4J_PASSWORD="12345678"  # Contraseña por defecto inicial
+NEO4J_PASSWORD="neo4j"  # Contraseña por defecto inicial
+ # NEO4J_PASSWORD="12345678"  # Contraseña por defecto inicial
 NEO4J_NEW_PASSWORD="tu_password"  # Misma contraseña usada en los scripts de importación
 
 echo "Configurando Neo4j..."

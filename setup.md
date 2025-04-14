@@ -37,12 +37,11 @@ sleep 10
 echo "Cambiando contraseña de Neo4j..."
 cypher-shell -u $NEO4J_USER -p $NEO4J_PASSWORD \
   "CALL system.change_password('$NEO4J_NEW_PASSWORD')"
-
-if [ $? -eq 0 ]; then
-    echo -e "${GREEN}Contraseña actualizada exitosamente${NC}"
-
-    # Crear archivo de configuración para los scripts
-    echo "Creando archivo de configuración..."
+MATCH (e:Estudiante)-[c:CURSÓ]->(m:Materia)
+RETURN e.carrera,
+       COUNT(DISTINCT e) as estudiantes,
+       ROUND(AVG(c.calificacion), 2) as promedio
+ORDER BY promedio DESC;ndo archivo de configuración..."
     cat > neo4j.conf << EOL
 NEO4J_USER=$NEO4J_USER
 NEO4J_PASSWORD=$NEO4J_NEW_PASSWORD
